@@ -1,4 +1,5 @@
 import 'package:blog_app/core/theme/app_pallete.dart';
+import 'package:blog_app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:blog_app/features/auth/presentation/pages/login_page.dart';
 import 'package:blog_app/features/auth/presentation/widgets/auth_field.dart';
 import 'package:blog_app/features/auth/presentation/widgets/auth_gradient_button.dart';
@@ -19,7 +20,7 @@ class _SignupPageState extends State<SignupPage> {
   final emailController = TextEditingController();
   final nameController = TextEditingController();
   final passwordController = TextEditingController();
-
+  final formkey = GlobalKey<FormState>(); // Create a GlobalKey
   @override
   void dispose() {
     emailController.dispose();
@@ -28,8 +29,6 @@ class _SignupPageState extends State<SignupPage> {
     super.dispose();
   }
 
-// Create a GlobalKey
-  final formkey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,6 +63,15 @@ class _SignupPageState extends State<SignupPage> {
               const SizedBox(height: 20),
               AuthGradientButton(
                 buttonText: 'sign up',
+                onpressed: () {
+                  if (formkey.currentState!.validate()) {
+                    context.read<AuthBloc>().add(AuthSignUP(
+                          email: emailController.text.trim(),
+                          password: passwordController.text.trim(),
+                          name: nameController.text.trim(),
+                        ));
+                  }
+                },
               ),
               const SizedBox(height: 20),
               GestureDetector(
