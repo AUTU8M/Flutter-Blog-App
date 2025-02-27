@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-//this is to create signin page box [name email password]
 class AuthField extends StatelessWidget {
   final String hintText;
   final TextEditingController controller;
@@ -21,7 +20,7 @@ class AuthField extends StatelessWidget {
       ),
       validator: (value) {
         if (value!.isEmpty) {
-          return "$hintText is required";
+          return "$hintText is missing!";
         }
         return null;
       },

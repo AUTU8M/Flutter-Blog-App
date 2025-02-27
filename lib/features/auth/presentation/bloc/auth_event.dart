@@ -4,9 +4,9 @@ part of 'auth_bloc.dart';
 sealed class AuthEvent {}
 
 final class AuthSignUp extends AuthEvent {
+  final String name;
   final String email;
   final String password;
-  final String name;
 
   AuthSignUp({
     required this.email,

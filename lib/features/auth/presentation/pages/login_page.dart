@@ -89,7 +89,7 @@ class _LoginPageState extends State<LoginPage> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        SignupPage.route(),
+                        SignUpPage.route(),
                       );
                     },
                     child: RichText(
