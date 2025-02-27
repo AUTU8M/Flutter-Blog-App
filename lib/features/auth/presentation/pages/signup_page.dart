@@ -59,18 +59,20 @@ class _SignupPageState extends State<SignupPage> {
               AuthField(
                 hintText: 'password',
                 controller: passwordController,
-                isObsureText: true,
+                isObscureText: true,
               ),
               const SizedBox(height: 20),
               AuthGradientButton(
                 buttonText: 'sign up',
                 onpressed: () {
                   if (formkey.currentState!.validate()) {
-                    context.read<AuthBloc>().add(AuthSignUP(
-                          email: emailController.text.trim(),
-                          password: passwordController.text.trim(),
-                          name: nameController.text.trim(),
-                        ));
+                    context.read<AuthBloc>().add(
+                          AuthSignUp(
+                            email: emailController.text.trim(),
+                            password: passwordController.text.trim(),
+                            name: nameController.text.trim(),
+                          ),
+                        );
                   }
                 },
               ),

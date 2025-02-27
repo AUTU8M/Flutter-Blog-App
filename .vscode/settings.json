@@ -19,5 +19,6 @@
         "titleBar.inactiveBackground": "#2b295599",
         "titleBar.inactiveForeground": "#e7e7e799"
     },
-    "cmake.ignoreCMakeListsMissing": true
+    "cmake.ignoreCMakeListsMissing": true,
+    "git.ignoreLimitWarning": true
 }

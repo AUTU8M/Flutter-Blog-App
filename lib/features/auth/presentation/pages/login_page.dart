@@ -54,7 +54,7 @@ class _LoginPageState extends State<LoginPage> {
               AuthField(
                 hintText: 'password',
                 controller: passwordController,
-                isObsureText: true,
+                isObscureText: true,
               ),
               const SizedBox(height: 20),
               AuthGradientButton(
