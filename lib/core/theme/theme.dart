@@ -14,6 +14,12 @@ class AppTheme {
     appBarTheme: const AppBarTheme(
       backgroundColor: AppPallete.backgroundColor,
     ),
+    chipTheme: const ChipThemeData(
+      color: WidgetStatePropertyAll(
+        AppPallete.backgroundColor,
+      ),
+      side: BorderSide.none,
+    ),
     inputDecorationTheme: InputDecorationTheme(
       contentPadding: const EdgeInsets.all(27),
       //enableborder only works when you dont click on it
