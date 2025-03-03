@@ -20,5 +20,6 @@
         "titleBar.inactiveForeground": "#e7e7e799"
     },
     "cmake.ignoreCMakeListsMissing": true,
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "java.configuration.updateBuildConfiguration": "interactive"
 }
